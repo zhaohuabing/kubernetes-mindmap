@@ -84,9 +84,11 @@ read -p "Press [Enter] key to show ip addr in each namespace ..."
 runthis "ip -n ns1 addr"
 echo ""
 
+read -p ""
 runthis "ip -n ns2 addr"
 echo ""
 
+read -p ""
 runthis "ip -n ns3 addr"
 echo ""
 
