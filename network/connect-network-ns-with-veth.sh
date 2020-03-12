@@ -8,6 +8,21 @@ runthis(){
     eval "$@" 
 }
 
+echo ""
+echo "This experiment shows how to connect two namespaces with a virtual link (veth pair)"
+echo ""
+echo "+------------------+              +------------------+"
+echo "|        ns1       |              |      ns2         |"
+echo "|                  |  veth pair   |                  |"
+echo "|                +-+              +-+                |"
+echo "| 192.168.1.1/24 | +--------------+ | 192.168.1.2/24 |"
+echo "|   (veth-ns1)   +-+              +-+   (veth-ns2)   |"
+echo "|                  |              |                  |"
+echo "|                  |              |                  |"
+echo "|                  |              |                  |"
+echo "+------------------+              +------------------+"
+echo ""
+
 read -p "Press [Enter] key to create networkspaces..."
 runthis "ip netns add ns1"
 runthis "ip netns add ns2"
